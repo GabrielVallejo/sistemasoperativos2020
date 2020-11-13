@@ -21,7 +21,7 @@ int main(){
     while (1) {
         struct sockaddr_in clientAddress;
         int cleintSize = sizeof(clientAddress);
-        int clientSocket = accept(sockfd, &clientAddress, &cleintSize);
+        int clientSocket = accept(sockfd, (struct sockaddr *) &clientAddress,(unsigned int *) &cleintSize);
         char c;
         char *message = "Hello desde gitpod";
          //while (read(clientSocket,&c, 1)) {
